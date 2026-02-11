@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional HVAC Services | Heating & Air Conditioning</title>
+    <title>Professional HVAC Services | Heating & Air Conditioning | Elite Comfort HVAC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-   
+  
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
         /* ============================================
            EDITABLE CLIENT INFORMATION
-           ============================================
-           Change these CSS variables to update client info throughout the site
-        */
+           ============================================ */
         :root {
             --client-business-name: "Elite Comfort HVAC";
             --client-phone: "(555) 123-4567";
@@ -25,7 +23,7 @@
             --client-hours: "Mon-Fri: 7am-7pm | Sat: 8am-5pm | Sun: Emergency Only";
             --client-service-area: "Huntsville, AL & Surrounding Areas";
             --client-logo-path: "/assets/logo.png";
-           
+          
             /* Brand Colors - Customize for each client */
             --primary-blue: #0A4D8C;
             --primary-dark: #042A4D;
@@ -35,12 +33,12 @@
             --text-dark: #1A2332;
             --text-gray: #5A6578;
             --border-color: #DDE3ED;
-           
+          
             /* Typography */
             --font-heading: 'Manrope', sans-serif;
             --font-body: 'IBM Plex Sans', sans-serif;
         }
-       
+      
         /* ============================================
            GLOBAL STYLES
            ============================================ */
@@ -49,7 +47,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-       
+      
         body {
             font-family: var(--font-body);
             color: var(--text-dark);
@@ -58,7 +56,15 @@
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
-       
+      
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+        }
+      
         /* ============================================
            TYPOGRAPHY
            ============================================ */
@@ -68,27 +74,27 @@
             line-height: 1.2;
             color: var(--text-dark);
         }
-       
+      
         h1 {
             font-size: 3.5rem;
             letter-spacing: -0.02em;
         }
-       
+      
         h2 {
             font-size: 2.5rem;
             letter-spacing: -0.01em;
         }
-       
+      
         h3 {
             font-size: 1.5rem;
         }
-       
+      
         p {
             color: var(--text-gray);
             font-size: 1.125rem;
             line-height: 1.7;
         }
-       
+      
         /* ============================================
            BUTTONS
            ============================================ */
@@ -105,31 +111,31 @@
             border: none;
             text-align: center;
         }
-       
+      
         .btn-primary {
             background: var(--accent-orange);
             color: var(--white);
             box-shadow: 0 4px 14px rgba(232, 93, 40, 0.3);
         }
-       
+      
         .btn-primary:hover {
             background: #D14E1F;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(232, 93, 40, 0.4);
         }
-       
+      
         .btn-secondary {
             background: transparent;
             color: var(--white);
             border: 2px solid var(--white);
         }
-       
+      
         .btn-secondary:hover {
             background: var(--white);
             color: var(--primary-blue);
             transform: translateY(-2px);
         }
-       
+      
         .btn-phone {
             background: var(--primary-blue);
             color: var(--white);
@@ -139,17 +145,92 @@
             font-size: 1.125rem;
             letter-spacing: 0.02em;
         }
-       
+      
         .btn-phone:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
         }
-       
+      
         .btn-phone::before {
             content: "📞";
             font-size: 1.25rem;
         }
-       
+      
+        /* ============================================
+           NAVIGATION STYLES
+           ============================================ */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+        }
+      
+        .nav-link {
+            color: var(--text-dark);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+      
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--primary-blue);
+        }
+      
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent-orange);
+            border-radius: 3px;
+        }
+      
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding: 8px;
+        }
+      
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+            padding: 1.5rem 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            border-top: 4px solid var(--primary-blue);
+            z-index: 999;
+        }
+      
+        .mobile-menu a {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 0.9rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+      
+        .mobile-menu a:hover {
+            background: var(--light-bg);
+            color: var(--primary-blue);
+        }
+      
         /* ============================================
            MODAL STYLES
            ============================================ */
@@ -165,19 +246,19 @@
             overflow-y: auto;
             animation: fadeIn 0.3s ease;
         }
-       
+      
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
-       
+      
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-       
+      
         .modal-content {
             background: var(--white);
             border-radius: 12px;
@@ -187,7 +268,7 @@
             animation: slideUp 0.3s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
-       
+      
         @keyframes slideUp {
             from {
                 transform: translateY(50px);
@@ -198,7 +279,7 @@
                 opacity: 1;
             }
         }
-       
+      
         .modal-header {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             color: var(--white);
@@ -206,19 +287,19 @@
             border-radius: 12px 12px 0 0;
             position: relative;
         }
-       
+      
         .modal-header h2 {
             color: var(--white);
             margin-bottom: 12px;
             font-size: 2rem;
         }
-       
+      
         .modal-header p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             margin: 0;
         }
-       
+      
         .close-modal {
             position: absolute;
             top: 20px;
@@ -236,20 +317,20 @@
             transition: all 0.3s ease;
             border: none;
         }
-       
+      
         .close-modal:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: rotate(90deg);
         }
-       
+      
         .modal-body {
             padding: 40px 32px;
         }
-       
+      
         .form-group {
             margin-bottom: 24px;
         }
-       
+      
         .form-group label {
             display: block;
             font-weight: 600;
@@ -257,12 +338,12 @@
             margin-bottom: 8px;
             font-size: 1rem;
         }
-       
+      
         .form-group label .required {
             color: var(--accent-orange);
             margin-left: 4px;
         }
-       
+      
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -275,7 +356,7 @@
             color: var(--text-dark);
             transition: all 0.3s ease;
         }
-       
+      
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -283,12 +364,12 @@
             border-color: var(--primary-blue);
             box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.1);
         }
-       
+      
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
-       
+      
         .form-submit {
             width: 100%;
             background: var(--accent-orange);
@@ -303,18 +384,18 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 14px rgba(232, 93, 40, 0.3);
         }
-       
+      
         .form-submit:hover {
             background: #D14E1F;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(232, 93, 40, 0.4);
         }
-       
+      
         .confirmation-modal .modal-body {
             text-align: center;
             padding: 60px 40px;
         }
-       
+      
         .confirmation-icon {
             width: 80px;
             height: 80px;
@@ -326,22 +407,22 @@
             margin: 0 auto 24px;
             font-size: 3rem;
         }
-       
+      
         .confirmation-modal h3 {
             color: var(--text-dark);
             margin-bottom: 16px;
             font-size: 1.75rem;
         }
-       
+      
         .confirmation-modal p {
             font-size: 1.125rem;
             margin-bottom: 32px;
         }
-       
+      
         .confirmation-modal .btn {
             padding: 14px 40px;
         }
-       
+      
         /* ============================================
            HEADER
            ============================================ */
@@ -353,39 +434,36 @@
             z-index: 1000;
             border-bottom: 3px solid var(--primary-blue);
         }
-       
+      
         .header-container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 20px 24px;
+            padding: 1.1rem 1.8rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 100px;
+            position: relative;
         }
-       
+      
         .logo-container {
-            display: flex;
-            align-items: center;
-            flex: 1;
-            max-width: 300px;
+            max-width: 260px;
+            flex-shrink: 0;
         }
-       
+      
         .logo {
             width: 100%;
             height: auto;
-            max-height: 80px;
-            min-height: 50px;
+            max-height: 78px;
             object-fit: contain;
             object-position: left center;
         }
-       
-        .header-cta {
+      
+        .header-right {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 2.5rem;
         }
-       
+      
         .header-phone {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -394,24 +472,24 @@
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
-       
+      
         .header-phone::before {
             content: "📞";
-            font-size: 1.5rem;
+            font-size: 1.6rem;
         }
-       
+      
         /* ============================================
            HERO SECTION
            ============================================ */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
-            padding: 120px 24px 100px;
+            padding: 140px 24px 110px;
             position: relative;
             overflow: hidden;
         }
-       
+      
         .hero::before {
             content: "";
             position: absolute;
@@ -424,229 +502,229 @@
                 radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
             pointer-events: none;
         }
-       
+      
         .hero-container {
             max-width: 1280px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-       
+      
         .hero-content {
-            max-width: 700px;
+            max-width: 720px;
         }
-       
+      
         .hero-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.15);
             color: var(--white);
-            padding: 8px 20px;
+            padding: 10px 24px;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 24px;
-            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            margin-bottom: 28px;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.22);
         }
-       
+      
         .hero h1 {
             color: var(--white);
-            margin-bottom: 24px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 28px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
         }
-       
+      
         .hero p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.25rem;
-            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.3rem;
+            margin-bottom: 44px;
         }
-       
+      
         .hero-cta {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 20px;
         }
-       
+      
         /* ============================================
            TRUST SIGNALS
            ============================================ */
         .trust-signals {
             background: var(--white);
-            padding: 60px 24px;
+            padding: 80px 24px;
             border-bottom: 1px solid var(--border-color);
         }
-       
+      
         .trust-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
         }
-       
+      
         .trust-item {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 24px;
         }
-       
+      
         .trust-icon {
-            width: 64px;
-            height: 64px;
+            width: 72px;
+            height: 72px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.4rem;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(10, 77, 140, 0.2);
+            box-shadow: 0 6px 16px rgba(10, 77, 140, 0.22);
         }
-       
+      
         .trust-content h3 {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--text-dark);
         }
-       
+      
         .trust-content p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin: 0;
         }
-       
+      
         /* ============================================
            SERVICES SECTION
            ============================================ */
         .services {
             background: var(--light-bg);
-            padding: 100px 24px;
+            padding: 110px 24px;
         }
-       
+      
         .services-container {
             max-width: 1280px;
             margin: 0 auto;
         }
-       
+      
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
-       
+      
         .section-header h2 {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
-       
+      
         .section-header p {
-            max-width: 600px;
+            max-width: 640px;
             margin: 0 auto;
         }
-       
+      
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 36px;
         }
-       
+      
         .service-card {
             background: var(--white);
-            border-radius: 12px;
-            padding: 40px 32px;
+            border-radius: 14px;
+            padding: 44px 36px;
             border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             position: relative;
             overflow: hidden;
         }
-       
+      
         .service-card::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
-       
+      
         .service-card:hover {
             border-color: var(--primary-blue);
-            box-shadow: 0 12px 32px rgba(10, 77, 140, 0.12);
-            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(10, 77, 140, 0.14);
+            transform: translateY(-6px);
         }
-       
+      
         .service-card:hover::before {
             transform: scaleX(1);
         }
-       
+      
         .service-icon {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--light-bg), var(--border-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 24px;
+            font-size: 2.8rem;
+            margin-bottom: 28px;
         }
-       
+      
         .service-card h3 {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: var(--text-dark);
         }
-       
+      
         .service-card p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin: 0;
         }
-       
+      
         /* ============================================
            WHY CHOOSE US
            ============================================ */
         .why-choose {
             background: var(--white);
-            padding: 100px 24px;
+            padding: 110px 24px;
         }
-       
+      
         .why-choose-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 90px;
             align-items: center;
         }
-       
+      
         .why-choose-content h2 {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
-       
+      
         .why-choose-content > p {
-            margin-bottom: 32px;
+            margin-bottom: 36px;
         }
-       
+      
         .benefits-list {
             list-style: none;
             padding: 0;
         }
-       
+      
         .benefits-list li {
-            padding: 16px 0;
+            padding: 18px 0;
             border-bottom: 1px solid var(--border-color);
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 18px;
         }
-       
+      
         .benefits-list li:last-child {
             border-bottom: none;
         }
-       
+      
         .benefit-check {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             background: var(--accent-orange);
             border-radius: 50%;
             display: flex;
@@ -655,181 +733,181 @@
             color: var(--white);
             font-weight: 700;
             flex-shrink: 0;
-            font-size: 1.125rem;
+            font-size: 1.3rem;
         }
-       
+      
         .benefit-text {
             flex: 1;
         }
-       
+      
         .benefit-text strong {
             display: block;
             color: var(--text-dark);
             font-weight: 700;
-            font-size: 1.125rem;
-            margin-bottom: 4px;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
         }
-       
+      
         .benefit-text span {
             color: var(--text-gray);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
-       
+      
         .why-choose-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 32px;
+            gap: 36px;
         }
-       
+      
         .stat-card {
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
-            padding: 40px 32px;
-            border-radius: 12px;
+            padding: 44px 36px;
+            border-radius: 14px;
             text-align: center;
             color: var(--white);
             position: relative;
             overflow: hidden;
         }
-       
+      
         .stat-card::before {
             content: "";
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            top: -60%;
+            right: -60%;
+            width: 220%;
+            height: 220%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
-       
+      
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-family: var(--font-heading);
         }
-       
+      
         .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
+            font-size: 1.05rem;
+            opacity: 0.92;
         }
-       
+      
         /* ============================================
            SERVICE AREA
            ============================================ */
         .service-area {
             background: var(--light-bg);
-            padding: 100px 24px;
+            padding: 110px 24px;
             text-align: center;
         }
-       
+      
         .service-area-container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
         }
-       
+      
         .service-area h2 {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
-       
+      
         .service-area p {
-            margin-bottom: 40px;
+            margin-bottom: 44px;
         }
-       
+      
         .area-badge {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             background: var(--white);
-            padding: 20px 40px;
+            padding: 22px 48px;
             border-radius: 100px;
-            font-size: 1.25rem;
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--primary-blue);
             border: 3px solid var(--primary-blue);
-            box-shadow: 0 4px 16px rgba(10, 77, 140, 0.15);
+            box-shadow: 0 6px 20px rgba(10, 77, 140, 0.16);
         }
-       
+      
         .area-badge::before {
             content: "📍";
-            font-size: 1.75rem;
+            font-size: 2rem;
         }
-       
+      
         /* ============================================
            PROCESS SECTION
            ============================================ */
         .process {
             background: var(--white);
-            padding: 100px 24px;
+            padding: 110px 24px;
         }
-       
+      
         .process-container {
             max-width: 1280px;
             margin: 0 auto;
         }
-       
+      
         .process-steps {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
-            margin-top: 60px;
+            gap: 56px;
+            margin-top: 70px;
             position: relative;
         }
-       
+      
         .process-steps::before {
             content: "";
             position: absolute;
-            top: 60px;
+            top: 70px;
             left: 16.66%;
             right: 16.66%;
-            height: 3px;
+            height: 4px;
             background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-orange) 100%);
             z-index: 0;
         }
-       
+      
         .process-step {
             text-align: center;
             position: relative;
             z-index: 1;
         }
-       
+      
         .step-number {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 3rem;
+            margin: 0 auto 28px;
+            font-size: 3.5rem;
             font-weight: 800;
             color: var(--white);
             font-family: var(--font-heading);
-            border: 6px solid var(--white);
-            box-shadow: 0 8px 24px rgba(10, 77, 140, 0.25);
+            border: 7px solid var(--white);
+            box-shadow: 0 10px 28px rgba(10, 77, 140, 0.28);
         }
-       
+      
         .process-step h3 {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-       
+      
         .process-step p {
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
-       
+      
         /* ============================================
            CTA SECTION
            ============================================ */
         .cta-section {
             background: linear-gradient(135deg, var(--accent-orange) 0%, #D14E1F 100%);
-            padding: 100px 24px;
+            padding: 110px 24px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-       
+      
         .cta-section::before {
             content: "";
             position: absolute;
@@ -838,245 +916,258 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 55%);
             pointer-events: none;
         }
-       
+      
         .cta-container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
-       
+      
         .cta-section h2 {
             color: var(--white);
-            margin-bottom: 20px;
-            font-size: 3rem;
+            margin-bottom: 24px;
+            font-size: 3.2rem;
         }
-       
+      
         .cta-section p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.25rem;
-            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.96);
+            font-size: 1.35rem;
+            margin-bottom: 48px;
         }
-       
+      
         .cta-phone {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             background: var(--white);
             color: var(--accent-orange);
-            padding: 24px 48px;
+            padding: 26px 54px;
             border-radius: 100px;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             text-decoration: none;
             font-family: var(--font-heading);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            margin-bottom: 24px;
+            box-shadow: 0 10px 36px rgba(0, 0, 0, 0.22);
+            transition: all 0.35s ease;
+            margin-bottom: 28px;
         }
-       
+      
         .cta-phone:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(1.06);
+            box-shadow: 0 14px 44px rgba(0, 0, 0, 0.28);
         }
-       
+      
         .cta-phone::before {
             content: "📞";
-            font-size: 2.5rem;
+            font-size: 2.8rem;
         }
-       
+      
         .cta-subtext {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            margin-top: 16px;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.1rem;
+            margin-top: 20px;
         }
-       
+      
         /* ============================================
            FOOTER
            ============================================ */
         .footer {
             background: var(--primary-dark);
             color: var(--white);
-            padding: 60px 24px 32px;
+            padding: 80px 24px 40px;
         }
-       
+      
         .footer-container {
             max-width: 1280px;
             margin: 0 auto;
         }
-       
+      
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 48px;
+            grid-template-columns: 1.6fr 1fr 1fr;
+            gap: 70px;
+            margin-bottom: 56px;
         }
-       
+      
         .footer-column h4 {
             color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.25rem;
+            margin-bottom: 24px;
+            font-size: 1.35rem;
         }
-       
+      
         .footer-column p,
         .footer-column a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.82);
             text-decoration: none;
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 1.9;
         }
-       
+      
         .footer-column a:hover {
             color: var(--accent-orange);
         }
-       
+      
         .footer-contact {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
         }
-       
+      
         .footer-contact-item {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 14px;
         }
-       
+      
         .footer-contact-item strong {
-            min-width: 60px;
+            min-width: 70px;
             color: var(--white);
         }
-       
+      
         .footer-logo {
             width: 100%;
-            max-width: 250px;
+            max-width: 280px;
             height: auto;
-            max-height: 70px;
-            min-height: 40px;
+            max-height: 80px;
             object-fit: contain;
             object-position: left center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
-       
+      
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.22);
+            padding-top: 40px;
             text-align: center;
         }
-       
+      
         .footer-bottom p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.64);
+            font-size: 0.95rem;
         }
-       
+      
         /* ============================================
            RESPONSIVE DESIGN
            ============================================ */
         @media (max-width: 1024px) {
             .why-choose-container {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 70px;
             }
-           
+          
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 50px;
             }
         }
-       
+      
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
             }
-           
+          
             h2 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
-           
+          
             .header-container {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
+                padding: 1rem 1.4rem;
             }
-           
-            .logo-container {
-                max-width: 100%;
-                justify-content: center;
+          
+            .logo {
+                max-height: 64px;
             }
-           
-            .header-cta {
-                flex-direction: column;
-                width: 100%;
+          
+            .hamburger {
+                display: block;
             }
-           
-            .btn {
-                width: 100%;
+          
+            .nav-menu {
+                display: none;
             }
-           
+          
+            .mobile-menu.active {
+                display: flex;
+            }
+          
+            .header-right {
+                gap: 1.2rem;
+            }
+          
+            .header-phone {
+                font-size: 1.1rem;
+            }
+          
             .hero {
-                padding: 80px 24px 60px;
+                padding: 100px 20px 80px;
             }
-           
+          
             .hero-cta {
                 flex-direction: column;
             }
-           
+          
             .trust-container {
                 grid-template-columns: 1fr;
             }
-           
+          
             .services-grid {
                 grid-template-columns: 1fr;
             }
-           
+          
             .process-steps {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 70px;
             }
-           
+          
             .process-steps::before {
                 display: none;
             }
-           
+          
             .why-choose-stats {
                 grid-template-columns: 1fr;
             }
-           
+          
             .cta-section h2 {
-                font-size: 2rem;
+                font-size: 2.4rem;
             }
-           
+          
             .cta-phone {
-                font-size: 1.5rem;
-                padding: 20px 32px;
+                font-size: 1.8rem;
+                padding: 22px 40px;
             }
-           
+          
             .modal-content {
                 margin: 20px;
             }
-           
+          
             .modal-header {
-                padding: 24px;
+                padding: 28px;
             }
-           
+          
             .modal-body {
-                padding: 24px;
+                padding: 28px;
             }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.9rem; }
+            .btn { padding: 14px 28px; font-size: 0.98rem; }
+            .cta-phone { font-size: 1.6rem; padding: 18px 32px; }
         }
     </style>
 </head>
 <body>
-    <!-- ============================================
-         APPOINTMENT MODAL
-         ============================================ -->
+
+    <!-- APPOINTMENT MODAL -->
     <div id="appointmentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close-modal" onclick="closeModal('appointmentModal')">&times;</button>
+                <button class="close-modal" onclick="closeModal('appointmentModal')">×</button>
                 <h2>Request an Appointment</h2>
                 <p>Fill out this short form, and a representative will contact you within the next business day to schedule your appointment. If you need immediate assistance, please call us.</p>
             </div>
@@ -1119,13 +1210,11 @@
         </div>
     </div>
 
-    <!-- ============================================
-         ESTIMATE MODAL
-         ============================================ -->
+    <!-- ESTIMATE MODAL -->
     <div id="estimateModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close-modal" onclick="closeModal('estimateModal')">&times;</button>
+                <button class="close-modal" onclick="closeModal('estimateModal')">×</button>
                 <h2>Request an Estimate</h2>
                 <p>Fill out this short form and a representative will contact you shortly.</p>
             </div>
@@ -1168,9 +1257,7 @@
         </div>
     </div>
 
-    <!-- ============================================
-         CONFIRMATION MODAL
-         ============================================ -->
+    <!-- CONFIRMATION MODAL -->
     <div id="confirmationModal" class="modal confirmation-modal">
         <div class="modal-content">
             <div class="modal-body">
@@ -1182,26 +1269,43 @@
         </div>
     </div>
 
-    <!-- ============================================
-         HEADER
-         ============================================ -->
+    <!-- HEADER WITH NAVIGATION -->
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <!-- Logo will be replaced with client logo at /assets/logo.png -->
-                <img src="/assets/logo.png" alt="Elite Comfort HVAC" class="logo">
+                <img src="/assets/logo.png" alt="Elite Comfort HVAC Logo" class="logo">
             </div>
-            <div class="header-cta">
-                <a href="tel:5551234567" class="header-phone">(555) 123-4567</a>
-                <a href="#" class="btn btn-primary" onclick="openModal('appointment'); return false;">Request an Appointment</a>
+
+            <div class="header-right">
+                <!-- Desktop Navigation -->
+                <nav class="nav-menu">
+                    <a href="#hero" class="nav-link">About Us</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#why-choose" class="nav-link">Why Us</a>
+                    <a href="#process" class="nav-link">Process</a>
+                    <a href="#cta" class="nav-link">Contact Us</a>
+                </nav>
+
+                <a href="tel:{{client-phone-raw}}" class="header-phone">{{client-phone}}</a>
+                <a href="#" class="btn btn-primary" onclick="openModal('appointment'); return false;">Request Appointment</a>
+
+                <!-- Hamburger for mobile -->
+                <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">☰</button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#hero" onclick="closeMobileMenu()">About Us</a>
+                <a href="#services" onclick="closeMobileMenu()">Services</a>
+                <a href="#why-choose" onclick="closeMobileMenu()">Why Us</a>
+                <a href="#process" onclick="closeMobileMenu()">Process</a>
+                <a href="#cta" onclick="closeMobileMenu()">Contact Us</a>
             </div>
         </div>
     </header>
 
-    <!-- ============================================
-         HERO SECTION
-         ============================================ -->
-    <section class="hero">
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">Licensed, Insured & Local</div>
@@ -1215,9 +1319,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         TRUST SIGNALS
-         ============================================ -->
+    <!-- TRUST SIGNALS -->
     <section class="trust-signals">
         <div class="trust-container">
             <div class="trust-item">
@@ -1244,10 +1346,8 @@
         </div>
     </section>
 
-    <!-- ============================================
-         SERVICES SECTION
-         ============================================ -->
-    <section class="services">
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
         <div class="services-container">
             <div class="section-header">
                 <h2>Complete HVAC Solutions</h2>
@@ -1288,10 +1388,8 @@
         </div>
     </section>
 
-    <!-- ============================================
-         WHY CHOOSE US
-         ============================================ -->
-    <section class="why-choose">
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose" id="why-choose">
         <div class="why-choose-container">
             <div class="why-choose-content">
                 <h2>Why Choose Elite Comfort HVAC?</h2>
@@ -1348,9 +1446,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         SERVICE AREA
-         ============================================ -->
+    <!-- SERVICE AREA -->
     <section class="service-area">
         <div class="service-area-container">
             <h2>Proudly Serving Your Community</h2>
@@ -1359,10 +1455,8 @@
         </div>
     </section>
 
-    <!-- ============================================
-         PROCESS SECTION
-         ============================================ -->
-    <section class="process">
+    <!-- PROCESS SECTION -->
+    <section class="process" id="process">
         <div class="process-container">
             <div class="section-header">
                 <h2>Simple Process, Exceptional Results</h2>
@@ -1388,10 +1482,8 @@
         </div>
     </section>
 
-    <!-- ============================================
-         CTA SECTION
-         ============================================ -->
-    <section class="cta-section">
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="cta">
         <div class="cta-container">
             <h2>Ready to Restore Your Comfort?</h2>
             <p>Do not let HVAC problems disrupt your life. Call now for fast, professional service.</p>
@@ -1400,9 +1492,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -1426,45 +1516,37 @@
                 <div class="footer-column">
                     <h4>Hours</h4>
                     <p>Mon-Fri: 7am-7pm<br>Sat: 8am-5pm<br>Sun: Emergency Only</p>
-                    <h4 style="margin-top: 24px;">Service Area</h4>
+                    <h4 style="margin-top: 28px;">Service Area</h4>
                     <p>Huntsville, AL &<br>Surrounding Areas</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Elite Comfort HVAC. All rights reserved. Licensed & Insured.</p>
+                <p>© 2026 Elite Comfort HVAC. All rights reserved. Licensed & Insured.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================
-         JAVASCRIPT FOR MODAL + EMAILJS FUNCTIONALITY
-         ============================================ -->
+    <!-- JAVASCRIPT -->
     <script>
-        // Initialize EmailJS
-        // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key (from Account → Public Key)
+        // Initialize EmailJS - replace with your actual keys
         (function() {
             emailjs.init({
                 publicKey: "YOUR_PUBLIC_KEY"
             });
         })();
 
-        // Open modal
+        // Modal controls
         function openModal(type) {
-            if (type === 'appointment') {
-                document.getElementById('appointmentModal').classList.add('active');
-            } else if (type === 'estimate') {
-                document.getElementById('estimateModal').classList.add('active');
-            }
+            const modalId = type === 'appointment' ? 'appointmentModal' : 'estimateModal';
+            document.getElementById(modalId).classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        // Close modal
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal on outside click
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
@@ -1472,67 +1554,61 @@
             }
         }
 
-        // Submit appointment form via EmailJS
+        // Appointment form submission
         function submitAppointmentForm(e) {
             e.preventDefault();
-
             const form = document.getElementById('appointmentForm');
-
-            // TODO: Replace these three values:
-            // YOUR_SERVICE_ID          → from Email Services
-            // YOUR_APPOINTMENT_TEMPLATE_ID → from Email Templates (create one for appointments)
-            emailjs.sendForm(
-                'YOUR_SERVICE_ID',
-                'YOUR_APPOINTMENT_TEMPLATE_ID',
-                form
-            )
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-
-                closeModal('appointmentModal');
-
-                document.getElementById('confirmationTitle').textContent = 'Appointment requested!';
-                document.getElementById('confirmationMessage').textContent = 'A representative will contact you shortly.';
-                document.getElementById('confirmationModal').classList.add('active');
-
-                form.reset();
-            })
-            .catch(function(error) {
-                console.error('FAILED...', error);
-                alert('Sorry, there was an error sending your request. Please try again or call us directly.');
-            });
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_APPOINTMENT_TEMPLATE_ID', form)
+                .then(() => {
+                    closeModal('appointmentModal');
+                    document.getElementById('confirmationTitle').textContent = 'Appointment Requested!';
+                    document.getElementById('confirmationMessage').textContent = 'We will contact you shortly to confirm your appointment.';
+                    document.getElementById('confirmationModal').classList.add('active');
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    alert('There was a problem sending your request. Please call us directly.');
+                });
         }
 
-        // Submit estimate form via EmailJS
+        // Estimate form submission
         function submitEstimateForm(e) {
             e.preventDefault();
-
             const form = document.getElementById('estimateForm');
-
-            // TODO: Replace these three values:
-            // YOUR_SERVICE_ID          → usually same as above
-            // YOUR_ESTIMATE_TEMPLATE_ID → from Email Templates (create one for estimates)
-            emailjs.sendForm(
-                'YOUR_SERVICE_ID',
-                'YOUR_ESTIMATE_TEMPLATE_ID',
-                form
-            )
-            .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
-
-                closeModal('estimateModal');
-
-                document.getElementById('confirmationTitle').textContent = 'Request received!';
-                document.getElementById('confirmationMessage').textContent = 'You will be contacted by a representative shortly.';
-                document.getElementById('confirmationModal').classList.add('active');
-
-                form.reset();
-            })
-            .catch(function(error) {
-                console.error('FAILED...', error);
-                alert('Sorry, there was an error sending your request. Please try again or call us directly.');
-            });
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_ESTIMATE_TEMPLATE_ID', form)
+                .then(() => {
+                    closeModal('estimateModal');
+                    document.getElementById('confirmationTitle').textContent = 'Estimate Requested!';
+                    document.getElementById('confirmationMessage').textContent = 'A representative will reach out with your free estimate soon.';
+                    document.getElementById('confirmationModal').classList.add('active');
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS error:', error);
+                    alert('There was a problem sending your request. Please call us directly.');
+                });
         }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+
+        // Close mobile menu when clicking a link or outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            if (menu.classList.contains('active') && 
+                !menu.contains(e.target) && 
+                !hamburger.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
     </script>
 </body>
 </html>
