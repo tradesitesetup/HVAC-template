@@ -62,7 +62,7 @@
         }
 
         section {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 110px;
         }
       
         /* ============================================
@@ -162,14 +162,14 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 2.2rem;
+            gap: 2.4rem;
         }
       
         .nav-link {
             color: var(--text-dark);
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1.08rem;
             text-decoration: none;
             transition: color 0.25s ease;
             position: relative;
@@ -183,7 +183,7 @@
         .nav-link.active::after {
             content: "";
             position: absolute;
-            bottom: -6px;
+            bottom: -8px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -195,7 +195,7 @@
             display: none;
             background: none;
             border: none;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--primary-blue);
             cursor: pointer;
             padding: 8px;
@@ -208,22 +208,23 @@
             left: 0;
             right: 0;
             background: var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-            padding: 1.5rem 1rem;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+            padding: 1.8rem 1.2rem;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
             border-top: 4px solid var(--primary-blue);
             z-index: 999;
         }
       
         .mobile-menu a {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             font-weight: 600;
             color: var(--text-dark);
             text-decoration: none;
-            padding: 0.9rem 1.2rem;
-            border-radius: 8px;
-            transition: all 0.2s;
+            padding: 1rem 1.4rem;
+            border-radius: 10px;
+            transition: all 0.25s;
+            text-align: center;
         }
       
         .mobile-menu a:hover {
@@ -461,23 +462,24 @@
         .header-right {
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2.6rem;
         }
       
         .header-phone {
             font-family: var(--font-heading);
             font-weight: 700;
-            font-size: 1.25rem;
+            font-size: 1.28rem;
             color: var(--primary-blue);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
+            white-space: nowrap;
         }
       
         .header-phone::before {
             content: "📞";
-            font-size: 1.6rem;
+            font-size: 1.7rem;
         }
       
         /* ============================================
@@ -1099,7 +1101,7 @@
             }
           
             .header-phone {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
           
             .hero {
@@ -1139,18 +1141,6 @@
                 font-size: 1.8rem;
                 padding: 22px 40px;
             }
-          
-            .modal-content {
-                margin: 20px;
-            }
-          
-            .modal-header {
-                padding: 28px;
-            }
-          
-            .modal-body {
-                padding: 28px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -1163,7 +1153,9 @@
 </head>
 <body>
 
-    <!-- APPOINTMENT MODAL -->
+    <!-- ============================================
+         APPOINTMENT MODAL
+         ============================================ -->
     <div id="appointmentModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1210,7 +1202,9 @@
         </div>
     </div>
 
-    <!-- ESTIMATE MODAL -->
+    <!-- ============================================
+         ESTIMATE MODAL
+         ============================================ -->
     <div id="estimateModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1257,7 +1251,9 @@
         </div>
     </div>
 
-    <!-- CONFIRMATION MODAL -->
+    <!-- ============================================
+         CONFIRMATION MODAL
+         ============================================ -->
     <div id="confirmationModal" class="modal confirmation-modal">
         <div class="modal-content">
             <div class="modal-body">
@@ -1269,11 +1265,14 @@
         </div>
     </div>
 
-    <!-- HEADER WITH NAVIGATION -->
+    <!-- ============================================
+         HEADER WITH FULLY RESPONSIVE NAV
+         ============================================ -->
     <header class="header">
         <div class="header-container">
             <div class="logo-container">
-                <img src="/assets/logo.png" alt="Elite Comfort HVAC Logo" class="logo">
+                <!-- Logo will be replaced with client logo at /assets/logo.png -->
+                <img src="/assets/logo.png" alt="Elite Comfort HVAC" class="logo">
             </div>
 
             <div class="header-right">
@@ -1286,14 +1285,15 @@
                     <a href="#cta" class="nav-link">Contact Us</a>
                 </nav>
 
-                <a href="tel:{{client-phone-raw}}" class="header-phone">{{client-phone}}</a>
+                <!-- Phone number now displays correctly -->
+                <a href="tel:5551234567" class="header-phone">(555) 123-4567</a>
                 <a href="#" class="btn btn-primary" onclick="openModal('appointment'); return false;">Request Appointment</a>
 
-                <!-- Hamburger for mobile -->
-                <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">☰</button>
+                <!-- Mobile Hamburger -->
+                <button class="hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">☰</button>
             </div>
 
-            <!-- Mobile Menu Dropdown -->
+            <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <a href="#hero" onclick="closeMobileMenu()">About Us</a>
                 <a href="#services" onclick="closeMobileMenu()">Services</a>
@@ -1304,7 +1304,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
     <section class="hero" id="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -1319,7 +1321,9 @@
         </div>
     </section>
 
-    <!-- TRUST SIGNALS -->
+    <!-- ============================================
+         TRUST SIGNALS
+         ============================================ -->
     <section class="trust-signals">
         <div class="trust-container">
             <div class="trust-item">
@@ -1346,7 +1350,9 @@
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
     <section class="services" id="services">
         <div class="services-container">
             <div class="section-header">
@@ -1388,7 +1394,9 @@
         </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
+    <!-- ============================================
+         WHY CHOOSE US
+         ============================================ -->
     <section class="why-choose" id="why-choose">
         <div class="why-choose-container">
             <div class="why-choose-content">
@@ -1446,7 +1454,9 @@
         </div>
     </section>
 
-    <!-- SERVICE AREA -->
+    <!-- ============================================
+         SERVICE AREA
+         ============================================ -->
     <section class="service-area">
         <div class="service-area-container">
             <h2>Proudly Serving Your Community</h2>
@@ -1455,7 +1465,9 @@
         </div>
     </section>
 
-    <!-- PROCESS SECTION -->
+    <!-- ============================================
+         PROCESS SECTION
+         ============================================ -->
     <section class="process" id="process">
         <div class="process-container">
             <div class="section-header">
@@ -1482,7 +1494,9 @@
         </div>
     </section>
 
-    <!-- CTA SECTION -->
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
     <section class="cta-section" id="cta">
         <div class="cta-container">
             <h2>Ready to Restore Your Comfort?</h2>
@@ -1492,7 +1506,9 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -1526,19 +1542,25 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ============================================
+         JAVASCRIPT FOR MODAL + EMAILJS + MOBILE MENU
+         ============================================ -->
     <script>
-        // Initialize EmailJS - replace with your actual keys
+        // Initialize EmailJS
+        // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key (from Account → Public Key)
         (function() {
             emailjs.init({
                 publicKey: "YOUR_PUBLIC_KEY"
             });
         })();
 
-        // Modal controls
+        // Modal functions
         function openModal(type) {
-            const modalId = type === 'appointment' ? 'appointmentModal' : 'estimateModal';
-            document.getElementById(modalId).classList.add('active');
+            if (type === 'appointment') {
+                document.getElementById('appointmentModal').classList.add('active');
+            } else if (type === 'estimate') {
+                document.getElementById('estimateModal').classList.add('active');
+            }
             document.body.style.overflow = 'hidden';
         }
 
@@ -1554,40 +1576,56 @@
             }
         }
 
-        // Appointment form submission
+        // Submit appointment form via EmailJS
         function submitAppointmentForm(e) {
             e.preventDefault();
             const form = document.getElementById('appointmentForm');
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_APPOINTMENT_TEMPLATE_ID', form)
-                .then(() => {
-                    closeModal('appointmentModal');
-                    document.getElementById('confirmationTitle').textContent = 'Appointment Requested!';
-                    document.getElementById('confirmationMessage').textContent = 'We will contact you shortly to confirm your appointment.';
-                    document.getElementById('confirmationModal').classList.add('active');
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS error:', error);
-                    alert('There was a problem sending your request. Please call us directly.');
-                });
+            // TODO: Replace these three values:
+            // YOUR_SERVICE_ID → from Email Services
+            // YOUR_APPOINTMENT_TEMPLATE_ID → from Email Templates (create one for appointments)
+            emailjs.sendForm(
+                'YOUR_SERVICE_ID',
+                'YOUR_APPOINTMENT_TEMPLATE_ID',
+                form
+            )
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                closeModal('appointmentModal');
+                document.getElementById('confirmationTitle').textContent = 'Appointment requested!';
+                document.getElementById('confirmationMessage').textContent = 'A representative will contact you shortly.';
+                document.getElementById('confirmationModal').classList.add('active');
+                form.reset();
+            })
+            .catch(function(error) {
+                console.error('FAILED...', error);
+                alert('Sorry, there was an error sending your request. Please try again or call us directly.');
+            });
         }
 
-        // Estimate form submission
+        // Submit estimate form via EmailJS
         function submitEstimateForm(e) {
             e.preventDefault();
             const form = document.getElementById('estimateForm');
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_ESTIMATE_TEMPLATE_ID', form)
-                .then(() => {
-                    closeModal('estimateModal');
-                    document.getElementById('confirmationTitle').textContent = 'Estimate Requested!';
-                    document.getElementById('confirmationMessage').textContent = 'A representative will reach out with your free estimate soon.';
-                    document.getElementById('confirmationModal').classList.add('active');
-                    form.reset();
-                })
-                .catch((error) => {
-                    console.error('EmailJS error:', error);
-                    alert('There was a problem sending your request. Please call us directly.');
-                });
+            // TODO: Replace these three values:
+            // YOUR_SERVICE_ID → usually same as above
+            // YOUR_ESTIMATE_TEMPLATE_ID → from Email Templates (create one for estimates)
+            emailjs.sendForm(
+                'YOUR_SERVICE_ID',
+                'YOUR_ESTIMATE_TEMPLATE_ID',
+                form
+            )
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                closeModal('estimateModal');
+                document.getElementById('confirmationTitle').textContent = 'Request received!';
+                document.getElementById('confirmationMessage').textContent = 'You will be contacted by a representative shortly.';
+                document.getElementById('confirmationModal').classList.add('active');
+                form.reset();
+            })
+            .catch(function(error) {
+                console.error('FAILED...', error);
+                alert('Sorry, there was an error sending your request. Please try again or call us directly.');
+            });
         }
 
         // Mobile menu toggle
@@ -1599,13 +1637,13 @@
             document.getElementById('mobileMenu').classList.remove('active');
         }
 
-        // Close mobile menu when clicking a link or outside
-        document.addEventListener('click', function(e) {
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.querySelector('.hamburger');
             if (menu.classList.contains('active') && 
-                !menu.contains(e.target) && 
-                !hamburger.contains(e.target)) {
+                !menu.contains(event.target) && 
+                !hamburger.contains(event.target)) {
                 closeMobileMenu();
             }
         });
