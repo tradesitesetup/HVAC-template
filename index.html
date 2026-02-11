@@ -17,6 +17,7 @@
         :root {
             --client-business-name: "Elite Comfort HVAC";
             --client-phone: "(555) 123-4567";
+            --client-phone-raw: "5551234567";
             --client-email: "service@elitecomfort.com";
             --client-hours: "Mon-Fri: 7am-7pm | Sat: 8am-5pm | Sun: Emergency Only";
             --client-service-area: "Huntsville, AL & Surrounding Areas";
@@ -144,6 +145,198 @@
         .btn-phone::before {
             content: "📞";
             font-size: 1.25rem;
+        }
+        
+        /* ============================================
+           MODAL STYLES
+           ============================================ */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            animation: slideUp 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: var(--white);
+            padding: 32px;
+            border-radius: 12px 12px 0 0;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+            font-size: 2rem;
+        }
+        
+        .modal-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--white);
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 40px 32px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group label .required {
+            color: var(--accent-orange);
+            margin-left: 4px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(10, 77, 140, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 18px 32px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(232, 93, 40, 0.3);
+        }
+        
+        .form-submit:hover {
+            background: #D14E1F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 93, 40, 0.4);
+        }
+        
+        .confirmation-modal .modal-body {
+            text-align: center;
+            padding: 60px 40px;
+        }
+        
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 3rem;
+        }
+        
+        .confirmation-modal h3 {
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            font-size: 1.75rem;
+        }
+        
+        .confirmation-modal p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+        }
+        
+        .confirmation-modal .btn {
+            padding: 14px 40px;
         }
         
         /* ============================================
@@ -807,6 +1000,11 @@
                 text-align: center;
             }
             
+            .logo-container {
+                max-width: 100%;
+                justify-content: center;
+            }
+            
             .header-cta {
                 flex-direction: column;
                 width: 100%;
@@ -853,10 +1051,134 @@
                 font-size: 1.5rem;
                 padding: 20px 32px;
             }
+            
+            .modal-content {
+                margin: 20px;
+            }
+            
+            .modal-header {
+                padding: 24px;
+            }
+            
+            .modal-body {
+                padding: 24px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- ============================================
+         APPOINTMENT MODAL
+         ============================================ -->
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeModal('appointmentModal')">&times;</button>
+                <h2>Request an Appointment</h2>
+                <p>Fill out this short form, and a representative will contact you within the next business day to schedule your appointment. If you need immediate assistance, please call us.</p>
+            </div>
+            <div class="modal-body">
+                <form id="appointmentForm" onsubmit="submitAppointmentForm(event)">
+                    <div class="form-group">
+                        <label for="apt-name">Name <span class="required">*</span></label>
+                        <input type="text" id="apt-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apt-phone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="apt-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apt-email">Email <span class="required">*</span></label>
+                        <input type="email" id="apt-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apt-address">Address <span class="required">*</span></label>
+                        <input type="text" id="apt-address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apt-service">Service <span class="required">*</span></label>
+                        <select id="apt-service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Indoor Air Quality">Indoor Air Quality</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Emergency HVAC">Emergency HVAC</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="apt-message">Message <span class="required">*</span></label>
+                        <textarea id="apt-message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Request an Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         ESTIMATE MODAL
+         ============================================ -->
+    <div id="estimateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeModal('estimateModal')">&times;</button>
+                <h2>Request an Estimate</h2>
+                <p>Fill out this short form and a representative will contact you shortly.</p>
+            </div>
+            <div class="modal-body">
+                <form id="estimateForm" onsubmit="submitEstimateForm(event)">
+                    <div class="form-group">
+                        <label for="est-name">Name <span class="required">*</span></label>
+                        <input type="text" id="est-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-phone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="est-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-email">Email <span class="required">*</span></label>
+                        <input type="email" id="est-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-address">Address <span class="required">*</span></label>
+                        <input type="text" id="est-address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-service">Service <span class="required">*</span></label>
+                        <select id="est-service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Indoor Air Quality">Indoor Air Quality</option>
+                            <option value="Maintenance">Maintenance</option>
+                            <option value="Emergency HVAC">Emergency HVAC</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-message">Message <span class="required">*</span></label>
+                        <textarea id="est-message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Request an Estimate</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         CONFIRMATION MODAL
+         ============================================ -->
+    <div id="confirmationModal" class="modal confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="confirmation-icon">✓</div>
+                <h3 id="confirmationTitle">Request Sent!</h3>
+                <p id="confirmationMessage">A representative will contact you shortly.</p>
+                <button class="btn btn-primary" onclick="closeModal('confirmationModal')">Close</button>
+            </div>
+        </div>
+    </div>
+
     <!-- ============================================
          HEADER
          ============================================ -->
@@ -868,7 +1190,7 @@
             </div>
             <div class="header-cta">
                 <a href="tel:5551234567" class="header-phone">(555) 123-4567</a>
-                <a href="/cdn-cgi/l/email-protection#f083958286999395b0959c998495939f9d969f8284de939f9d" class="btn btn-primary">Request a Quote</a>
+                <a href="#" class="btn btn-primary" onclick="openModal('appointment'); return false;">Request an Appointment</a>
             </div>
         </div>
     </header>
@@ -884,7 +1206,7 @@
                 <p>Professional heating and air conditioning solutions for your home or business. Same-day emergency service available throughout Huntsville, AL and surrounding areas.</p>
                 <div class="hero-cta">
                     <a href="tel:5551234567" class="btn btn-phone">Call Now: (555) 123-4567</a>
-                    <a href="/cdn-cgi/l/email-protection#0e7d6b7c78676d6b4e6b62677a6b6d616368617c7a206d6163" class="btn btn-secondary">Request Free Estimate</a>
+                    <a href="#" class="btn btn-secondary" onclick="openModal('estimate'); return false;">Request Free Estimate</a>
                 </div>
             </div>
         </div>
@@ -1094,7 +1416,7 @@
                         </div>
                         <div class="footer-contact-item">
                             <strong>Email:</strong>
-                            <a href="/cdn-cgi/l/email-protection#c2b1a7b0b4aba1a782a7aeabb6a7a1adafa4adb0b6eca1adaf"><span class="__cf_email__" data-cfemail="f98a9c8b8f909a9cb99c95908d9c9a96949f968b8dd79a9694">[email&#160;protected]</span></a>
+                            <a href="mailto:service@elitecomfort.com">service@elitecomfort.com</a>
                         </div>
                     </div>
                 </div>
@@ -1103,3 +1425,103 @@
                     <p>Mon-Fri: 7am-7pm<br>Sat: 8am-5pm<br>Sun: Emergency Only</p>
                     <h4 style="margin-top: 24px;">Service Area</h4>
                     <p>Huntsville, AL &<br>Surrounding Areas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elite Comfort HVAC. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT FOR MODAL FUNCTIONALITY
+         ============================================ -->
+    <script>
+        // Open modal function
+        function openModal(type) {
+            if (type === 'appointment') {
+                document.getElementById('appointmentModal').classList.add('active');
+            } else if (type === 'estimate') {
+                document.getElementById('estimateModal').classList.add('active');
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal function
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Submit appointment form
+        function submitAppointmentForm(e) {
+            e.preventDefault();
+            
+            const form = document.getElementById('appointmentForm');
+            const formData = new FormData(form);
+            
+            // Build email body
+            let emailBody = 'APPOINTMENT REQUEST%0D%0A%0D%0A';
+            emailBody += 'Name: ' + encodeURIComponent(formData.get('name')) + '%0D%0A';
+            emailBody += 'Phone: ' + encodeURIComponent(formData.get('phone')) + '%0D%0A';
+            emailBody += 'Email: ' + encodeURIComponent(formData.get('email')) + '%0D%0A';
+            emailBody += 'Address: ' + encodeURIComponent(formData.get('address')) + '%0D%0A';
+            emailBody += 'Service: ' + encodeURIComponent(formData.get('service')) + '%0D%0A';
+            emailBody += 'Message: ' + encodeURIComponent(formData.get('message'));
+            
+            // Open mailto link
+            window.location.href = 'mailto:service@elitecomfort.com?subject=Appointment%20Request&body=' + emailBody;
+            
+            // Close form modal
+            closeModal('appointmentModal');
+            
+            // Show confirmation
+            document.getElementById('confirmationTitle').textContent = 'Appointment requested!';
+            document.getElementById('confirmationMessage').textContent = 'A representative will contact you shortly.';
+            document.getElementById('confirmationModal').classList.add('active');
+            
+            // Reset form
+            form.reset();
+        }
+
+        // Submit estimate form
+        function submitEstimateForm(e) {
+            e.preventDefault();
+            
+            const form = document.getElementById('estimateForm');
+            const formData = new FormData(form);
+            
+            // Build email body
+            let emailBody = 'ESTIMATE REQUEST%0D%0A%0D%0A';
+            emailBody += 'Name: ' + encodeURIComponent(formData.get('name')) + '%0D%0A';
+            emailBody += 'Phone: ' + encodeURIComponent(formData.get('phone')) + '%0D%0A';
+            emailBody += 'Email: ' + encodeURIComponent(formData.get('email')) + '%0D%0A';
+            emailBody += 'Address: ' + encodeURIComponent(formData.get('address')) + '%0D%0A';
+            emailBody += 'Service: ' + encodeURIComponent(formData.get('service')) + '%0D%0A';
+            emailBody += 'Message: ' + encodeURIComponent(formData.get('message'));
+            
+            // Open mailto link
+            window.location.href = 'mailto:service@elitecomfort.com?subject=Estimate%20Request&body=' + emailBody;
+            
+            // Close form modal
+            closeModal('estimateModal');
+            
+            // Show confirmation
+            document.getElementById('confirmationTitle').textContent = 'Request received!';
+            document.getElementById('confirmationMessage').textContent = 'You will be contacted by a representative shortly.';
+            document.getElementById('confirmationModal').classList.add('active');
+            
+            // Reset form
+            form.reset();
+        }
+    </script>
+</body>
+</html>
