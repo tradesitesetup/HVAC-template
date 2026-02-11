@@ -1444,7 +1444,7 @@
         // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key (from Account → Public Key)
         (function() {
             emailjs.init({
-                publicKey: "YOUR_PUBLIC_KEY"
+                publicKey: "g7_40GuawxicxAFjM"
             });
         })();
 
@@ -1479,11 +1479,11 @@
             const form = document.getElementById('appointmentForm');
 
             // TODO: Replace these three values:
-            // YOUR_SERVICE_ID          → from Email Services
-            // YOUR_APPOINTMENT_TEMPLATE_ID → from Email Templates (create one for appointments)
+            // service_egx9scs          → from Email Services
+            // template_nzv04mb → from Email Templates (create one for appointments)
             emailjs.sendForm(
-                'YOUR_SERVICE_ID',
-                'YOUR_APPOINTMENT_TEMPLATE_ID',
+                'service_egx9scs',
+                'template_nzv04mb',
                 form
             )
             .then(function(response) {
@@ -1510,11 +1510,11 @@
             const form = document.getElementById('estimateForm');
 
             // TODO: Replace these three values:
-            // YOUR_SERVICE_ID          → usually same as above
-            // YOUR_ESTIMATE_TEMPLATE_ID → from Email Templates (create one for estimates)
+            // service_egx9scs          → usually same as above
+            // service_egx9scs → from Email Templates (create one for estimates)
             emailjs.sendForm(
-                'YOUR_SERVICE_ID',
-                'YOUR_ESTIMATE_TEMPLATE_ID',
+                'service_egx9scs',
+                'service_egx9scs',
                 form
             )
             .then(function(response) {
