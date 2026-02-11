@@ -1478,8 +1478,42 @@
             emailBody += 'Message: ' + encodeURIComponent(formData.get('message'));
             
             // Open mailto link
-            window.location.href = 'mailto:will@tradesitesetup.com?subject=Appointment%20Request&body=' + emailBody;
-            
+            <script> function submitAppointmentForm(e) {     e.preventDefault();      const form = document.getElementById('appointmentForm');      emailjs.send(         "service_egx9scs",         "template_nzv04mb",         {             name: form.name.value,             phone: form.phone.value,             email: form.email.value,             address: form.address.value,             service: form.service.value,             message: form.message.value         }     ).then(() => {         closeModal('appointmentModal');          document.getElementById('confirmationTitle').textContent = 'Appointment requested!';         document.getElementById('confirmationMessage').textContent =             'A representative will contact you shortly.';         document.getElementById('confirmationModal').classList.add('active');          form.reset();     }).catch(error => {         alert("Something went wrong. Please call us directly.");         console.error(error);     }); } </script>
+
+<script>
+function submitEstimateForm(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('estimateForm');
+
+    emailjs.send(
+        "service_egx9scs",
+        "template_nzv04mb",
+        {
+            name: form.name.value,
+            phone: form.phone.value,
+            email: form.email.value,
+            address: form.address.value,
+            service: form.service.value,
+            message: form.message.value
+        }
+    ).then(() => {
+        closeModal('estimateModal');
+
+        document.getElementById('confirmationTitle').textContent = 'Request received!';
+        document.getElementById('confirmationMessage').textContent =
+            'You will be contacted by a representative shortly.';
+        document.getElementById('confirmationModal').classList.add('active');
+
+        form.reset();
+    }).catch(error => {
+        alert("Something went wrong. Please call us directly.");
+        console.error(error);
+    });
+}
+</script>
+
+    
             // Close form modal
             closeModal('appointmentModal');
             
@@ -1509,7 +1543,7 @@
             emailBody += 'Message: ' + encodeURIComponent(formData.get('message'));
             
             // Open mailto link
-            window.location.href = 'mailto:will@tradesitesetup.com?subject=Estimate%20Request&body=' + emailBody;
+            <script> function submitAppointmentForm(e) {     e.preventDefault();      const form = document.getElementById('appointmentForm');      emailjs.send(         "service_egx9scs",         "template_nzv04mb",         {             name: form.name.value,             phone: form.phone.value,             email: form.email.value,             address: form.address.value,             service: form.service.value,             message: form.message.value         }     ).then(() => {         closeModal('appointmentModal');          document.getElementById('confirmationTitle').textContent = 'Appointment requested!';         document.getElementById('confirmationMessage').textContent =             'A representative will contact you shortly.';         document.getElementById('confirmationModal').classList.add('active');          form.reset();     }).catch(error => {         alert("Something went wrong. Please call us directly.");         console.error(error);     }); } </script>
             
             // Close form modal
             closeModal('estimateModal');
@@ -1522,6 +1556,13 @@
             // Reset form
             form.reset();
         }
+        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("g7_40GuawxicxAFjM");
+  })();
+</script>
+
     </script>
 </body>
 </html>
