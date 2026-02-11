@@ -1,1 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional HVAC Services | Heating & Air Conditioning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           EDITABLE CLIENT INFORMATION
+           ============================================
+           Change these CSS variables to update client info throughout the site
+        */
+        :root {
+            --client-business-name: "Elite Comfort HVAC";
+            --client-phone: "(555) 123-4567";
+            --client-email: "service@elitecomfort.com";
+            --client-hours: "Mon-Fri: 7am-7pm | Sat: 8am-5pm | Sun: Emergency Only";
+            --client-service-area: "Huntsville, AL & Surrounding Areas";
+            --client-logo-path: "/assets/logo.png";
+            
+            /* Brand Colors - Customize for each client */
+            --primary-blue: #0A4D8C;
+            --primary-dark: #042A4D;
+            --accent-orange: #E85D28;
+            --light-bg: #F7F9FC;
+            --white: #FFFFFF;
+            --text-dark: #1A2332;
+            --text-gray: #5A6578;
+            --border-color: #DDE3ED;
+            
+            /* Typography */
+            --font-heading: 'Manrope', sans-serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+        
+        /* ============================================
+           GLOBAL STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: -0.01em;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            color: var(--text-gray);
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--accent-orange);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(232, 93, 40, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: #D14E1F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 93, 40, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+        
+        .btn-phone {
+            background: var(--primary-blue);
+            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.125rem;
+            letter-spacing: 0.02em;
+        }
+        
+        .btn-phone:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-phone::before {
+            content: "📞";
+            font-size: 1.25rem;
+        }
+        
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .header-phone {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .header-phone::before {
+            content: "📞";
+            font-size: 1.5rem;
+        }
+        
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            padding: 120px 24px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 24px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 24px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+        
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        /* ============================================
+           TRUST SIGNALS
+           ============================================ */
+        .trust-signals {
+            background: var(--white);
+            padding: 60px 24px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .trust-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .trust-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(10, 77, 140, 0.2);
+        }
+        
+        .trust-content h3 {
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        
+        .trust-content p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services {
+            background: var(--light-bg);
+            padding: 100px 24px;
+        }
+        
+        .services-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 16px;
+        }
+        
+        .section-header p {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px 32px;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 12px 32px rgba(10, 77, 140, 0.12);
+            transform: translateY(-4px);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--light-bg), var(--border-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* ============================================
+           WHY CHOOSE US
+           ============================================ */
+        .why-choose {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+        
+        .why-choose-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .why-choose-content h2 {
+            margin-bottom: 24px;
+        }
+        
+        .why-choose-content > p {
+            margin-bottom: 32px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .benefit-check {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 1.125rem;
+        }
+        
+        .benefit-text {
+            flex: 1;
+        }
+        
+        .benefit-text strong {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+        }
+        
+        .benefit-text span {
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+        
+        .why-choose-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            padding: 40px 32px;
+            border-radius: 12px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 8px;
+            font-family: var(--font-heading);
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* ============================================
+           SERVICE AREA
+           ============================================ */
+        .service-area {
+            background: var(--light-bg);
+            padding: 100px 24px;
+            text-align: center;
+        }
+        
+        .service-area-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .service-area h2 {
+            margin-bottom: 16px;
+        }
+        
+        .service-area p {
+            margin-bottom: 40px;
+        }
+        
+        .area-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            padding: 20px 40px;
+            border-radius: 100px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            border: 3px solid var(--primary-blue);
+            box-shadow: 0 4px 16px rgba(10, 77, 140, 0.15);
+        }
+        
+        .area-badge::before {
+            content: "📍";
+            font-size: 1.75rem;
+        }
+        
+        /* ============================================
+           PROCESS SECTION
+           ============================================ */
+        .process {
+            background: var(--white);
+            padding: 100px 24px;
+        }
+        
+        .process-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 60px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: 16.66%;
+            right: 16.66%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-orange) 100%);
+            z-index: 0;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            font-family: var(--font-heading);
+            border: 6px solid var(--white);
+            box-shadow: 0 8px 24px rgba(10, 77, 140, 0.25);
+        }
+        
+        .process-step h3 {
+            margin-bottom: 12px;
+        }
+        
+        .process-step p {
+            font-size: 1rem;
+        }
+        
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #D14E1F 100%);
+            padding: 100px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .cta-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 3rem;
+        }
+        
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+        
+        .cta-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            color: var(--accent-orange);
+            padding: 24px 48px;
+            border-radius: 100px;
+            font-size: 2rem;
+            font-weight: 800;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin-bottom: 24px;
+        }
+        
+        .cta-phone:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-phone::before {
+            content: "📞";
+            font-size: 2.5rem;
+        }
+        
+        .cta-subtext {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin-top: 16px;
+        }
+        
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 24px 32px;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-column h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+        
+        .footer-column p,
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .footer-contact-item strong {
+            min-width: 60px;
+            color: var(--white);
+        }
+        
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 32px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+        
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .why-choose-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+            
+            .header-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .hero {
+                padding: 80px 24px 60px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .trust-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .why-choose-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-phone {
+                font-size: 1.5rem;
+                padding: 20px 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <!-- Logo will be replaced with client logo at /assets/logo.png -->
+                <img src="/assets/logo.png" alt="Elite Comfort HVAC" class="logo">
+            </div>
+            <div class="header-cta">
+                <a href="tel:5551234567" class="header-phone">(555) 123-4567</a>
+                <a href="mailto:service@elitecomfort.com" class="btn btn-primary">Request a Quote</a>
+            </div>
+        </div>
+    </header>
 
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Licensed, Insured & Local</div>
+                <h1>Expert HVAC Services When You Need Them Most</h1>
+                <p>Professional heating and air conditioning solutions for your home or business. Same-day emergency service available throughout Austin, TX and surrounding areas.</p>
+                <div class="hero-cta">
+                    <a href="tel:5551234567" class="btn btn-phone">Call Now: (555) 123-4567</a>
+                    <a href="mailto:service@elitecomfort.com" class="btn btn-secondary">Request Free Estimate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TRUST SIGNALS
+         ============================================ -->
+    <section class="trust-signals">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                <div class="trust-content">
+                    <h3>Licensed & Insured</h3>
+                    <p>Fully certified technicians with comprehensive liability and workers compensation insurance for your protection.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">⚡</div>
+                <div class="trust-content">
+                    <h3>Emergency Service Available</h3>
+                    <p>24/7 emergency HVAC service when your system fails. We respond fast to restore your comfort.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🏡</div>
+                <div class="trust-content">
+                    <h3>Locally Owned & Operated</h3>
+                    <p>Proud to serve our community with personalized service and fair, upfront pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES SECTION
+         ============================================ -->
+    <section class="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Complete HVAC Solutions</h2>
+                <p>From routine maintenance to complete system replacements, we handle every aspect of your heating and cooling needs with expertise and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>AC Repair</h3>
+                    <p>Fast, reliable air conditioning repairs to get your system running efficiently. We diagnose issues quickly and fix them right the first time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>AC Installation</h3>
+                    <p>Professional installation of high-efficiency air conditioning systems. We help you choose the right system for your space and budget.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>Heating Repair</h3>
+                    <p>Expert furnace and heat pump repairs to keep you warm when temperatures drop. Available for emergency service calls.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Heating Installation</h3>
+                    <p>Complete heating system installation with energy-efficient options. Proper sizing and installation for optimal performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Maintenance Plans</h3>
+                    <p>Preventive maintenance programs to extend equipment life, improve efficiency, and prevent costly breakdowns.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💨</div>
+                    <h3>Indoor Air Quality</h3>
+                    <p>Improve your home's air quality with filtration systems, humidifiers, and ventilation solutions for healthier living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY CHOOSE US
+         ============================================ -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <div class="why-choose-content">
+                <h2>Why Choose Elite Comfort HVAC?</h2>
+                <p>We are not just another HVAC company. We are your neighbors, committed to delivering exceptional service and lasting comfort solutions.</p>
+                <ul class="benefits-list">
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div class="benefit-text">
+                            <strong>Upfront, Honest Pricing</strong>
+                            <span>No hidden fees or surprise charges. You know the cost before we start work.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div class="benefit-text">
+                            <strong>Same-Day Service Available</strong>
+                            <span>We understand HVAC emergencies cannot wait. Fast response times guaranteed.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div class="benefit-text">
+                            <strong>100% Satisfaction Guarantee</strong>
+                            <span>We stand behind our work with comprehensive warranties on parts and labor.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="benefit-check">✓</div>
+                        <div class="benefit-text">
+                            <strong>Certified Expert Technicians</strong>
+                            <span>Ongoing training ensures our team stays current with the latest HVAC technology.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="why-choose-stats">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Serving Austin</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Satisfied Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Emergency Service</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICE AREA
+         ============================================ -->
+    <section class="service-area">
+        <div class="service-area-container">
+            <h2>Proudly Serving Your Community</h2>
+            <p>We provide professional HVAC services throughout Austin and the surrounding areas. If you're nearby, we can help!</p>
+            <div class="area-badge">Austin, TX & Surrounding Areas</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROCESS SECTION
+         ============================================ -->
+    <section class="process">
+        <div class="process-container">
+            <div class="section-header">
+                <h2>Simple Process, Exceptional Results</h2>
+                <p>Getting the comfort you deserve is easy with our streamlined service process.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Call or Contact Us</h3>
+                    <p>Reach out by phone or email. We will discuss your needs and schedule a convenient service time.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Get Your Free Quote</h3>
+                    <p>Our technician inspects your system and provides upfront, honest pricing with no hidden fees.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Professional Service</h3>
+                    <p>We complete the work efficiently and correctly, ensuring your complete satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CTA SECTION
+         ============================================ -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2>Ready to Restore Your Comfort?</h2>
+            <p>Do not let HVAC problems disrupt your life. Call now for fast, professional service.</p>
+            <a href="tel:5551234567" class="cta-phone">(555) 123-4567</a>
+            <div class="cta-subtext">Available 24/7 for Emergency Service | Free Estimates on New Installations</div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="/assets/logo.png" alt="Elite Comfort HVAC" class="footer-logo">
+                    <p>Your trusted local HVAC experts serving Austin, TX and surrounding areas with professional heating and air conditioning services.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:5551234567">(555) 123-4567</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <strong>Email:</strong>
+                            <a href="mailto:service@elitecomfort.com">service@elitecomfort.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Hours</h4>
+                    <p>Mon-Fri: 7am-7pm<br>Sat: 8am-5pm<br>Sun: Emergency Only</p>
+                    <h4 style="margin-top: 24px;">Service Area</h4>
+                    <p>Austin, TX &<br>Surrounding Areas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Elite Comfort HVAC. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
